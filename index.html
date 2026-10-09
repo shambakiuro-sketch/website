@@ -156,7 +156,7 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 <main id="top">
 <div class="hw" id="hw">
 <header class="hero" id="hero">
-<video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="metadata" poster="videos/poster.jpg">
+<video id="heroVideo" class="hero-video" muted loop playsinline preload="metadata" poster="videos/poster.jpg">
   <source src="videos/hero.mp4.mp4" type="video/mp4">
 </video>
 <div class="hshade"></div>
@@ -269,6 +269,7 @@ function updateHeroScroll(){
   heroVideo.style.filter='saturate('+(0.8 - p*0.15)+') contrast(1.08) blur('+blur+'px)';
   hc.style.opacity=1-p*1.3;
   hc.style.transform='translateY(' + (-p*70) + 'px) scale(' + (1 + p*0.18) + ')';
+  if(heroVideo.duration){heroVideo.currentTime=p*heroVideo.duration;}
 }
 function shade(c,k){return c.map(function(v){return Math.round(v*k)})}
 function face(css,rgb,grid){

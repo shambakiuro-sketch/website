@@ -60,14 +60,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .who i{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f26a1b,#161616)}
 .who em{font:italic 26px Outfit,serif;color:#9aa0a6;margin-left:14px}
 .col{position:relative;height:460px;perspective:900px;transform-style:preserve-3d}
-.m{position:absolute;inset:0;width:100%!important;height:100%;margin:0!important;object-fit:cover;z-index:1}.art{position:relative}.tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 18px 25px -20px rgba(0,0,0,.5)}
+.m{position:absolute;inset:0;width:100%!important;height:100%;margin:0!important;object-fit:cover;z-index:1}.art{position:relative}.tile{position:absolute;border-radius:22px;overflow:hidden;box-sh[...]
 .tile svg{width:84%;margin-bottom:-4px}
 .t1{left:0;top:0;width:44%;height:42%;background:linear-gradient(#7db4e6,#dcebf7);color:#33414f}
 .t2{left:22%;top:20%;width:56%;height:62%;background:linear-gradient(160deg,#3d4452,#15171a);color:#f26a1b;z-index:2}
 .t3{right:0;bottom:0;width:42%;height:40%;background:linear-gradient(#ffb27d,#f26a1b);color:#fff;z-index:3}
-.play{border:0;cursor:pointer;font-size:16px;position:absolute;left:12%;top:46%;z-index:4;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--or);box-shadow:0 18px 30px -12px rgba(0,0,0,.35);transition:transform .2s ease}
+.play{border:0;cursor:pointer;font-size:16px;position:absolute;left:12%;top:46%;z-index:4;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--or);b[...]
 .play:hover{transform:scale(1.1)}
-dialog{border:0;padding:0;border-radius:16px;width:min(900px,94vw);background:#000;overflow:hidden}dialog::backdrop{background:rgba(0,0,0,.75)}dialog video{display:block;width:100%}dialog p{color:#fff;font-size:14px;padding:14px 18px}
+dialog{border:0;padding:0;border-radius:16px;width:min(900px,94vw);background:#000;overflow:hidden}dialog::backdrop{background:rgba(0,0,0,.75)}dialog video{display:block;width:100%}dialog p{color:[...]}
 .sv{background:var(--bg)}
 .head{text-align:center;max-width:620px;margin:0 auto 46px}
 .head p{color:var(--mut)}
@@ -156,8 +156,8 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 <main id="top">
 <div class="hw" id="hw">
 <header class="hero" id="hero">
-<video id="heroVideo" class="hero-video" muted loop playsinline preload="metadata" poster="videos/poster.jpg">
-  <source src="videos/hero.mp4.mp4" type="video/mp4">
+<video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="metadata" poster="videos/poster.jpg">
+  <source src="videos/hero.mp4" type="video/mp4">
 </video>
 <div class="hshade"></div>
 <div class="hc" id="hc">
@@ -255,7 +255,7 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 var $=function(s){return document.querySelector(s)},clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
 var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 var heroVideo=$('#heroVideo'),hw=$('#hw'),hc=$('#hc');
-var HERO_VIDEO_PATH='videos/hero.mp4.mp4';
+var HERO_VIDEO_PATH='videos/hero.mp4';
 if(HERO_VIDEO_PATH){heroVideo.src=HERO_VIDEO_PATH;}
 heroVideo.addEventListener('error',function(){heroVideo.style.display='none';});
 function updateHeroScroll(){
@@ -269,7 +269,6 @@ function updateHeroScroll(){
   heroVideo.style.filter='saturate('+(0.8 - p*0.15)+') contrast(1.08) blur('+blur+'px)';
   hc.style.opacity=1-p*1.3;
   hc.style.transform='translateY(' + (-p*70) + 'px) scale(' + (1 + p*0.18) + ')';
-  if(heroVideo.duration){heroVideo.currentTime=p*heroVideo.duration;}
 }
 function shade(c,k){return c.map(function(v){return Math.round(v*k)})}
 function face(css,rgb,grid){

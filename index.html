@@ -17,7 +17,7 @@ h1,h2,h3{font-family:Outfit,system-ui,sans-serif;line-height:1.1;margin:0;font-w
 a{color:inherit;text-decoration:none}
 p{margin:0}
 .wrap{width:min(1180px,92%);margin:0 auto}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;font-weight:600;font-size:14px;padding:12px 22px;border-radius:99px;border:0;cursor:pointer;transition:transform .18s ease,background .18s ease}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;font-weight:600;font-size:14px;padding:12px 22px;border-radius:99px;border:0;cursor:pointer;transition:transform .2s}
 .btn:hover{background:#d85a10;transform:translateY(-2px)}
 .btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ffb27d;outline-offset:2px}
 .eyebrow{color:var(--or);font-size:14px;font-weight:600;margin-bottom:10px;display:block}
@@ -34,7 +34,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .hw{height:240vh;position:relative}
 .hero{position:sticky;top:0;height:100vh;overflow:hidden;background:#15171a;border-radius:0 0 56px 56px;perspective:900px;isolation:isolate}
 .cam{position:absolute;left:50%;top:50%;width:2400px;height:2400px;margin:-1200px 0 0 -1200px;transform-style:preserve-3d;will-change:transform}
-.ground{position:absolute;inset:0;background:linear-gradient(rgba(242,106,27,.22) 2px,transparent 2px) 0 0/120px 120px,linear-gradient(90deg,rgba(242,106,27,.22) 2px,transparent 2px) 0 0/120px 120px}
+.ground{position:absolute;inset:0;background:linear-gradient(rgba(242,106,27,.22) 2px,transparent 2px) 0 0/120px 120px,linear-gradient(90deg,rgba(242,106,27,.22) 2px,transparent 2px) 0 0/120px 120px;opacity:.4}
 .b{position:absolute;transform-style:preserve-3d}
 .f{position:absolute;display:block}
 .hshade{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at 50% 45%,rgba(14,15,17,.15),rgba(14,15,17,.88) 78%),linear-gradient(#15171a 0,transparent 30%)}
@@ -63,13 +63,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .who i{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f26a1b,#161616)}
 .who em{font:italic 26px Outfit,serif;color:#9aa0a6;margin-left:14px}
 .col{position:relative;height:460px;perspective:900px;transform-style:preserve-3d}
-.m{position:absolute;inset:0;width:100%!important;height:100%;margin:0!important;object-fit:cover;z-index:1}.art{position:relative}.tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -20px rgba(0,0,0,.38)}
+.m{position:absolute;inset:0;width:100%!important;height:100%;margin:0!important;object-fit:cover;z-index:1}.art{position:relative}.tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -12px rgba(0,0,0,.4);transform-style:preserve-3d;will-change:transform}
 .tile svg{width:84%;margin-bottom:-4px}
 .t1{left:0;top:0;width:44%;height:42%;background:linear-gradient(#7db4e6,#dcebf7);color:#33414f}
 .t2{left:22%;top:20%;width:56%;height:62%;background:linear-gradient(160deg,#3d4452,#15171a);color:#f26a1b;z-index:2}
 .t3{right:0;bottom:0;width:42%;height:40%;background:linear-gradient(#ffb27d,#f26a1b);color:#fff;z-index:3}
-.play{border:0;cursor:pointer;font-size:16px;position:absolute;left:12%;top:46%;z-index:4;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--or);box-shadow:0 18px 40px -18px rgba(0,0,0,.5)}
- dialog{border:0;padding:0;border-radius:16px;width:min(900px,94vw);background:#000;overflow:hidden}dialog::backdrop{background:rgba(0,0,0,.75)}dialog video{display:block;width:100%}dialog p{color:#fff;padding:14px 16px;font-size:14px;background:#111}
+.play{border:0;cursor:pointer;font-size:16px;position:absolute;left:12%;top:46%;z-index:4;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--or);box-shadow:0 8px 32px -8px rgba(0,0,0,.4);transition:.2s}
+.play:hover{transform:scale(1.1)}
+ dialog{border:0;padding:0;border-radius:16px;width:min(900px,94vw);background:#000;overflow:hidden}dialog::backdrop{background:rgba(0,0,0,.75)}dialog video{display:block;width:100%}dialog p{color:#999;text-align:center;padding:20px 16px;margin:0}dialog .x{position:absolute;top:12px;right:12px;z-index:9;background:rgba(0,0,0,.5);color:#fff;border:0;width:36px;height:36px;border-radius:50%;cursor:pointer;font:20px system-ui;display:grid;place-items:center;transition:.2s}dialog .x:hover{background:rgba(0,0,0,.75)}
 .sv{background:var(--bg)}
 .head{text-align:center;max-width:620px;margin:0 auto 46px}
 .head p{color:var(--mut)}
@@ -138,14 +139,14 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
 <symbol id="crane" viewBox="0 0 120 100"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M40 98V20M52 98V20M40 32l12 10M40 52l12 10M40 72l12 10M10 20h100M52 20L70 6l18 14M96 20v28"/></g></symbol>
-<symbol id="bldg" viewBox="0 0 120 100"><path fill="currentColor" d="M14 100V44h34v56zM56 100V10h46v90z"/><path stroke="#fff" stroke-opacity=".55" stroke-width="2.5" d="M20 54h22M20 66h22M20 78h22M62 22h30M62 34h30M62 46h30M62 58h30M62 70h30M62 82h30"/></symbol>
+<symbol id="bldg" viewBox="0 0 120 100"><path fill="currentColor" d="M14 100V44h34v56zM56 100V10h46v90z"/><path stroke="#fff" stroke-opacity=".55" stroke-width="2.5" d="M20 54h22M20 66h22M20 78h22M62 26h18M62 46h18M62 66h18"/></g></symbol>
 <symbol id="hat" viewBox="0 0 120 100"><path fill="currentColor" d="M20 74a40 40 0 0 1 80 0zM8 78h104v12H8z"/><path d="M54 36h12v38H54z" fill="#fff" fill-opacity=".35"/></symbol>
 <symbol id="plan" viewBox="0 0 120 100"><g fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 90V30l24-18 24 18v60zM60 90V50h40v40M28 90V62h18v28M70 60h20M70 72h20"/></g></symbol>
 </svg>
 
 <nav>
 <div class="wrap">
-<a href="#top" class="logo" aria-label="Builda Constructions home"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 30V10h10v20M14 30V4h14v26M2 30h28M8 15h6M8 20h6M8 25h6M18 15h8M18 20h8M18 25h8"/></svg><span>BUILDA<small>CONSTRUCTIONS</small></span></a>
+<a href="#top" class="logo" aria-label="Builda Constructions home"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 30V10h10v20M14 30V4h14v26M2 30h28M8 15h4M8 22h4M20 10h4M20 17h4M20 24h4"/></svg><div><span>Builda</span><small>CONSTRUCTIONS</small></div></a>
 <div class="links" id="links">
 <a href="#top">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#why">Why Us</a><a href="#projects">Projects</a><a href="#contact">Contact Us</a>
 </div>
@@ -164,7 +165,7 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 <h1>Building dreams<br>creating reality</h1>
 <a href="#about" class="btn">Discover more →</a>
 </div>
-<a href="#about" class="hint" aria-label="Scroll to the next section"><svg class="t" viewBox="0 0 104 104"><defs><path id="c" d="M52 52m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><text><textPath href="#c" startOffset="8">SCROLL • SCROLL • SCROLL • </textPath></text></svg><b>↓</b></a>
+<a href="#about" class="hint" aria-label="Scroll to the next section"><svg class="t" viewBox="0 0 104 104"><defs><path id="c" d="M52 52m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><text><textPath href="#c" startOffset="0%" font-size="11"><tspan letter-spacing="3">SCROLL TO DISCOVER</tspan></textPath></text></svg><b>↓</b></a>
 </header>
 </div>
 
@@ -186,8 +187,8 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 <div class="rv">
 <span class="eyebrow">About us</span>
 <h2>Building foundations for business growth</h2>
-<p class="l">Commercial construction involves the design, development and construction of structures intended for business use. From office buildings and retail spaces to industrial complexes and hospitality venues, we deliver standout spaces that support growth, efficiency and long-term value.</p>
-<ul class="tick"><li>Site analysis and feasibility studies</li><li>100% satisfaction guarantee</li><li>Architectural design tailored to business needs</li><li>Sustainable and energy-efficient buildings</li></ul>
+<p class="l">Commercial construction involves the design, development and construction of structures intended for business use. From office buildings and retail spaces to industrial complexes and manufacturing facilities.</p>
+<ul class="tick"><li>Site analysis and feasibility studies</li><li>100% satisfaction guarantee</li><li>Architectural design tailored to business needs</li><li>Sustainable and energy-efficient building practices</li></ul>
 <div class="who"><i></i><div><strong>Richard Smith Collin</strong><br><span style="color:var(--mut)">CEO, Founder of Builda</span></div><em>R. Collin</em></div>
 </div>
 </div>
@@ -195,11 +196,11 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 
 <section class="sec sv" id="services">
 <div class="wrap">
-<div class="head rv"><span class="eyebrow">Our services</span><h2>Your best possible solutions</h2><p>Commercial construction involves the design, development and construction of structures intended for business use. We combine strategic planning, design expertise and practical delivery to build spaces that work smarter.</p></div>
+<div class="head rv"><span class="eyebrow">Our services</span><h2>Your best possible solutions</h2><p>Commercial construction involves the design, development and construction of structures intended for business use. From office buildings to retail spaces.</p></div>
 <div class="cards">
-<div class="rv"><div class="card" data-tilt><h3>Architecture design</h3><p>Living, dining, kitchen and play areas designed and attached to the home.</p><div class="art g1"><img class="m" src="images/service-architecture.jpg" alt="Architecture design" loading="lazy" onerror="this.remove()"><svg><use href="#plan"/></svg></div></div></div>
-<div class="rv"><div class="card" data-tilt><h3>Pre-construction services</h3><p>Site assessment and feasibility studies, permit acquisition and regulatory compliance.</p><div class="art g2"><img class="m" src="images/service-preconstruction.jpg" alt="Pre-construction" loading="lazy" onerror="this.remove()"><svg><use href="#plan"/></svg></div></div></div>
-<div class="rv"><div class="card" data-tilt><h3>Renovation &amp; remodeling</h3><p>Office space expansion and redesign, retail store remodeling and fit-outs.</p><div class="art g3"><img class="m" src="images/service-renovation.jpg" alt="Renovation" loading="lazy" onerror="this.remove()"><svg><use href="#plan"/></svg></div></div></div>
+<div class="rv"><div class="card" data-tilt><h3>Architecture design</h3><p>Living, dining, kitchen and play areas designed and attached to the home.</p><div class="art g1"><img class="m" src="images/service-1.jpg" alt="Architecture design" loading="lazy" onerror="this.remove()"><svg><use href="#plan"/></svg></div></div></div>
+<div class="rv"><div class="card" data-tilt><h3>Pre-construction services</h3><p>Site assessment and feasibility studies, permit acquisition and regulatory compliance.</p><div class="art g2"><img class="m" src="images/service-2.jpg" alt="Pre-construction" loading="lazy" onerror="this.remove()"><svg><use href="#hat"/></svg></div></div></div>
+<div class="rv"><div class="card" data-tilt><h3>Renovation &amp; remodeling</h3><p>Office space expansion and redesign, retail store remodeling and fit-outs.</p><div class="art g3"><img class="m" src="images/service-3.jpg" alt="Renovation" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div></div></div>
 </div>
 </div>
 </section>
@@ -222,12 +223,12 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 
 <section class="sec pj" id="projects">
 <div class="wrap">
-<div class="head rv"><span class="eyebrow">Our projects</span><h2>Check our latest projects</h2><p>Commercial construction involves the design, development and construction of structures intended for business use. Explore some of our recent builds and fit-out projects.</p></div>
+<div class="head rv"><span class="eyebrow">Our projects</span><h2>Check our latest projects</h2><p>Commercial construction involves the design, development and construction of structures intended for business use. From office buildings to retail spaces.</p></div>
 <div class="pg">
-<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g4"><img class="m" src="images/project-1.jpg" alt="Completed office tower" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div><div class="i"><h3>Northline Tower</h3><small>Commercial office</small></div></a></div>
-<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g2"><img class="m" src="images/project-2.jpg" alt="Retail centre exterior" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div><div class="i"><h3>Harbor Square</h3><small>Retail centre</small></div></a></div>
-<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g3"><img class="m" src="images/project-3.jpg" alt="Residential development" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div><div class="i"><h3>Rosewood Homes</h3><small>Residential</small></div></a></div>
-<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g1"><img class="m" src="images/project-4.jpg" alt="Warehouse fit-out" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div><div class="i"><h3>Logistics Hub</h3><small>Industrial fit-out</small></div></a></div>
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g4"><img class="m" src="images/project-1.jpg" alt="Completed office tower" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div><div class="i"><h3>Office Tower</h3><small>Central Business District</small></div></a></div>
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g2"><img class="m" src="images/project-2.jpg" alt="Retail centre exterior" loading="lazy" onerror="this.remove()"><svg><use href="#hat"/></svg></div><div class="i"><h3>Retail Centre</h3><small>Shopping Complex</small></div></a></div>
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g3"><img class="m" src="images/project-3.jpg" alt="Residential development" loading="lazy" onerror="this.remove()"><svg><use href="#crane"/></svg></div><div class="i"><h3>Residential</h3><small>Housing Development</small></div></a></div>
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g1"><img class="m" src="images/project-4.jpg" alt="Warehouse fit-out" loading="lazy" onerror="this.remove()"><svg><use href="#plan"/></svg></div><div class="i"><h3>Warehouse</h3><small>Industrial Complex</small></div></a></div>
 </div>
 </div>
 </section>
@@ -246,7 +247,7 @@ footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-si
 </div>
 </section>
 </main>
-<dialog id="vd"><button class="x" id="vx" aria-label="Close video">✕</button><video id="vv" controls playsinline preload="none" poster="videos/poster.jpg" src="about.mp4"></video><p id="vn" hidden>Video not available</p></dialog>
+<dialog id="vd"><button class="x" id="vx" aria-label="Close video">✕</button><video id="vv" controls playsinline preload="none" poster="videos/poster.png" src="videos/about.mp4"></video><p id="vn" hidden>Video unavailable</p></dialog>
 <footer>© 2026 Builda Constructions. All rights reserved.</footer>
 
 <script>
@@ -339,7 +340,7 @@ var io=new IntersectionObserver(function(es){es.forEach(function(en){
 })},{threshold:.6});
 document.querySelectorAll('[data-n]').forEach(function(e){io.observe(e)});
 var vd=$('#vd'),vv=$('#vv');
-var clips=['about.mp4','about-3.mp4'],ci=0;
+var clips=['videos/about.mp4','videos/about-3.mp4'],ci=0;
 $('#play').addEventListener('click',function(){vd.showModal();vv.play().catch(function(){})});
 vv.addEventListener('ended',function(){ci=(ci+1)%clips.length;vv.src=clips[ci];vv.play().catch(function(){})});
 vv.addEventListener('error',function(){$('#vn').hidden=false;vv.hidden=true});

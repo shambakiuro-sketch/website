@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Builda Constructions | Building Dreams, Creating Reality</title>
+<meta name="description" content="Builda Constructions: architecture design, pre-construction services and renovation for commercial and residential projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#161616;--or:#f26a1b;--bg:#f4f6f7;--mut:#6b7280;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 Inter,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;line-height:1.1;margin:0;font-weight:600}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+.wrap{width:min(1180px,92%);margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;font-weight:600;font-size:14px;padding:12px 22px;border-radius:99px;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:#d85a10;transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ffb27d;outline-offset:2px}
+.eyebrow{color:var(--or);font-size:14px;font-weight:600;margin-bottom:10px;display:block}
+/* nav */
+nav{position:fixed;inset:0 0 auto;height:66px;background:var(--ink);color:#fff;z-index:50;display:flex;align-items:center}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:8px;font:600 22px Outfit,sans-serif;letter-spacing:.5px}
+.logo small{display:block;font:500 8px Inter,sans-serif;letter-spacing:2px;color:#bbb;margin-top:-4px}
+.logo svg{width:30px;height:30px;color:var(--or)}
+.links{display:flex;gap:28px;font-size:14px}
+.links a{opacity:.85}.links a:hover{opacity:1;color:#ffb27d}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+/* hero */
+.hw{height:240vh;position:relative}
+.hero{position:sticky;top:0;height:100vh;overflow:hidden;background:#15171a;border-radius:0 0 56px 56px;isolation:isolate}
+.hv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform;background:#15171a}
+.hshade{position:absolute;inset:0;z-index:2;background:linear-gradient(rgba(14,15,17,.55),rgba(14,15,17,.5) 50%,rgba(14,15,17,.72)),radial-gradient(ellipse at 50% 45%,transparent,rgba(14,15,17,.55) 85%)}
+.hc{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:70px 20px 0;will-change:transform,opacity}
+.hc .eyebrow{letter-spacing:1px;color:#ffb27d}
+.hc h1{font-size:clamp(38px,7vw,78px);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:28px}
+.hint{position:absolute;z-index:3;bottom:26px;left:50%;transform:translateX(-50%);display:grid;place-items:center;width:104px;height:104px;border-radius:50%;background:#fff;color:var(--ink)}
+.hint svg.t{position:absolute;inset:0;width:100%;height:100%;animation:spin 16s linear infinite}
+.hint svg.t text{font:600 10.5px Inter,sans-serif;fill:var(--ink);letter-spacing:2px}
+.hint b{font-size:22px;color:var(--or);animation:bob 1.6s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{50%{transform:translateY(6px)}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;padding:64px 0 24px}
+.stats b{display:block;font:600 clamp(32px,4.4vw,48px) Outfit,sans-serif}
+.stats span{color:var(--mut);font-size:14px}
+/* sections */
+.sec{padding:90px 0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about h2,.head h2{font-size:clamp(30px,4vw,42px);margin-bottom:16px}
+.about p.l{color:var(--mut);margin-bottom:18px}
+.tick{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px;font-size:15px}
+.tick li{display:flex;gap:10px;align-items:center}
+.tick li:before{content:"✓";flex:none;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--or);color:var(--or);font-size:11px}
+.who{display:flex;align-items:center;gap:12px;font-size:13px}
+.who i{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f26a1b,#161616)}
+.who em{font:italic 26px Outfit,serif;color:#9aa0a6;margin-left:14px}
+.col{position:relative;height:460px;perspective:900px;transform-style:preserve-3d}
+.m{position:absolute;inset:0;width:100%!important;height:100%;margin:0!important;object-fit:cover;z-index:1}.art{position:relative}.tile{position:absolute;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px -18px rgba(0,0,0,.45);display:grid;place-items:end center;color:#fff}
+.tile svg{width:84%;margin-bottom:-4px}
+.t1{left:0;top:0;width:44%;height:42%;background:linear-gradient(#7db4e6,#dcebf7);color:#33414f}
+.t2{left:22%;top:20%;width:56%;height:62%;background:linear-gradient(160deg,#3d4452,#15171a);color:#f26a1b;z-index:2}
+.t3{right:0;bottom:0;width:42%;height:40%;background:linear-gradient(#ffb27d,#f26a1b);color:#fff;z-index:3}
+.play{border:0;cursor:pointer;font-size:16px;position:absolute;left:12%;top:46%;z-index:4;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--or);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+dialog{border:0;padding:0;border-radius:16px;width:min(900px,94vw);background:#000;overflow:hidden}dialog::backdrop{background:rgba(0,0,0,.75)}dialog video{display:block;width:100%}dialog p{color:#fff;padding:40px 20px;text-align:center;margin:0}.x{position:absolute;right:10px;top:8px;z-index:2;background:#fff;border:0;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:16px}
+.sv{background:var(--bg)}
+.head{text-align:center;max-width:620px;margin:0 auto 46px}
+.head p{color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;perspective:1200px}
+.card{background:#fff;border-radius:var(--r);padding:26px;box-shadow:0 12px 40px -16px rgba(0,0,0,.18);transform-style:preserve-3d;transition:transform .15s ease-out}
+.card h3{font-size:22px;margin-bottom:8px;transform:translateZ(30px)}
+.card p{color:var(--mut);font-size:14px;margin-bottom:18px;transform:translateZ(18px)}
+.art{height:190px;border-radius:14px;display:grid;place-items:end center;overflow:hidden;transform:translateZ(46px);box-shadow:0 18px 30px -14px rgba(0,0,0,.4)}
+.art svg{width:70%}
+.g1{background:linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px) 0 0/22px 22px,#1f4e79;color:#fff}
+.g2{background:linear-gradient(#5b9bd5,#cfe4f6);color:#243342}
+.g3{background:linear-gradient(160deg,#8a6a4a,#3a2c1f);color:#ffb27d}
+.g4{background:linear-gradient(160deg,#444b57,#15171a);color:#f26a1b}
+/* tower */
+.tw{height:420vh;position:relative}
+.ts{position:sticky;top:66px;height:calc(100vh - 66px);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.tst{height:100%;display:grid;place-items:center;padding:14px 0}
+.vf{position:relative;height:100%;aspect-ratio:9/16;max-width:100%;border-radius:28px;overflow:hidden;background:#15171a;box-shadow:0 30px 60px -24px rgba(0,0,0,.55)}
+.vf video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#15171a}
+.vbar{position:absolute;left:16px;right:16px;bottom:16px;height:4px;border-radius:4px;background:rgba(255,255,255,.35)}
+.vbar i{display:block;height:100%;width:0;border-radius:4px;background:var(--or)}
+.steps{display:grid;gap:6px}
+.step{display:flex;gap:16px;padding:13px 18px;border-radius:14px;border-left:3px solid #e5e7eb;opacity:.45;transition:.35s}
+.step.on{opacity:1;border-color:var(--or);background:var(--bg);transform:translateX(8px)}
+.step b{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#e5e7eb;font:600 14px Outfit,sans-serif;transition:.35s}
+.step.on b{background:var(--or);color:#fff}
+.step h3{font-size:19px;margin-bottom:3px}
+.step p{font-size:14px;color:var(--mut)}
+/* projects */
+.pj{background:var(--ink);color:#fff;border-radius:56px 56px 0 0}
+.pj .head p{color:#aaa}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pc{border-radius:var(--r);overflow:hidden;background:#222;transition:transform .2s}
+.pc:hover{transform:translateY(-6px)}
+.pc .art{height:210px;border-radius:0;box-shadow:none;transform:none}
+.pc div.i{padding:16px 18px}
+.pc h3{font-size:18px}.pc small{color:#9aa0a6}
+/* contact */
+.ct{background:var(--ink);color:#fff;padding:20px 0 90px}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.cg h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+.cg p{color:#aaa}
+form{display:grid;gap:12px}
+input,select,textarea{width:100%;font:inherit;padding:14px 16px;border-radius:12px;border:1px solid #3a3d42;background:#1f2226;color:#fff}
+textarea{min-height:110px;resize:vertical}
+.ok{color:#ffb27d;font-size:14px;min-height:20px}
+footer{background:#0e0f10;color:#9aa0a6;text-align:center;padding:26px 0;font-size:13px}
+/* responsive */
+@media(max-width:900px){
+.links{position:fixed;inset:66px 0 auto;background:var(--ink);flex-direction:column;gap:0;padding:8px 6%;transform:translateY(-130%);transition:transform .3s}
+.links.open{transform:none}.links a{padding:14px 0;border-bottom:1px solid #2a2d31}
+.burger{display:block}nav .btn.q{display:none}
+.stats{grid-template-columns:repeat(2,1fr)}
+.about,.cg{grid-template-columns:1fr;gap:34px}
+.col{height:380px}
+.cards{grid-template-columns:1fr}
+.pg{grid-template-columns:repeat(2,1fr)}
+.ts{display:block;width:100%}.ts .head{display:none}
+.tst{position:absolute;inset:0;padding:0}.vf{width:100%;height:100%;aspect-ratio:auto;border-radius:0}
+.ts>div:last-child{position:absolute;left:0;right:0;bottom:0;padding:70px 12px 36px;background:linear-gradient(transparent,rgba(14,15,17,.9));pointer-events:none}
+.step{display:none;opacity:1;background:rgba(21,23,26,.78);backdrop-filter:blur(8px);color:#fff;padding:14px 16px}
+.step.on{display:flex;transform:none;background:rgba(21,23,26,.82)}.step b{background:var(--or);color:#fff}.step p{color:#d1d5db}.step h3{font-size:18px}
+.vbar{left:12px;right:12px;bottom:16px}
+.sec{padding:64px 0}
+}
+@media(max-width:520px){.pg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.hint svg.t,.hint b{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="crane" viewBox="0 0 120 100"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M40 98V20M52 98V20M40 32l12 10M40 52l12 10M40 72l12 10M10 20h100M52 20L70 6l18 14M96 20v28"/></g><rect x="6" y="17" width="14" height="10" fill="currentColor"/><rect x="92" y="48" width="8" height="8" fill="currentColor"/></symbol>
+<symbol id="bldg" viewBox="0 0 120 100"><path fill="currentColor" d="M14 100V44h34v56zM56 100V10h46v90z"/><path stroke="#fff" stroke-opacity=".55" stroke-width="2.5" d="M20 54h22M20 66h22M20 78h22M20 90h22M63 20h32M63 32h32M63 44h32M63 56h32M63 68h32M63 80h32"/></symbol>
+<symbol id="hat" viewBox="0 0 120 100"><path fill="currentColor" d="M20 74a40 40 0 0 1 80 0zM8 78h104v12H8z"/><path d="M54 36h12v38H54z" fill="#fff" fill-opacity=".35"/></symbol>
+<symbol id="plan" viewBox="0 0 120 100"><g fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 90V30l24-18 24 18v60zM60 90V50h40v40M28 90V62h18v28M70 60h20M70 72h20"/></g></symbol>
+</svg>
+
+<nav>
+<div class="wrap">
+<a href="#top" class="logo" aria-label="Builda Constructions home"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 30V10h10v20M14 30V4h14v26M2 30h28M8 15h2M8 21h2M19 10h4M19 17h4M19 24h4"/></svg><span>BUILDA<small>CONSTRUCTIONS</small></span></a>
+<div class="links" id="links">
+<a href="#top">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#why">Why Us</a><a href="#projects">Projects</a><a href="#contact">Contact Us</a>
+</div>
+<a href="#contact" class="btn q">Get a quote</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+</div>
+</nav>
+
+<main id="top">
+<div class="hw" id="hw">
+<header class="hero" id="hero">
+<video class="hv" id="hv" muted playsinline preload="auto" disablepictureinpicture poster="videos/hero-poster.jpg" src="videos/hero.mp4"></video>
+<div class="hshade"></div>
+<div class="hc" id="hc">
+<span class="eyebrow">Your vision, our expertise</span>
+<h1>Building dreams<br>creating reality</h1>
+<a href="#about" class="btn">Discover more →</a>
+</div>
+<a href="#about" class="hint" aria-label="Scroll to the next section"><svg class="t" viewBox="0 0 104 104"><defs><path id="c" d="M52 52m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs><text><textPath href="#c">OUR DREAM PLACE • BUILD WITH US •</textPath></text></svg><b>↓</b></a>
+</header>
+</div>
+
+<section class="wrap stats" aria-label="Company figures">
+<div><b data-n="19" data-s="K+">0</b><span>Successful projects</span></div>
+<div><b data-n="650" data-s="+">0</b><span>Professional team</span></div>
+<div><b data-n="18" data-s="K+">0</b><span>Satisfied clients</span></div>
+<div><b data-n="200" data-s="+">0</b><span>Winning awards</span></div>
+</section>
+
+<section class="sec" id="about">
+<div class="wrap about">
+<div class="col" id="col">
+<div class="tile t1" data-d="1"><img class="m" src="images/about-1.jpg" alt="Construction crane against the sky" loading="lazy" onerror="this.remove()"><svg><use href="#crane"/></svg></div>
+<div class="tile t2" data-d="2"><img class="m" src="images/about-2.jpg" alt="Modern building under construction" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div>
+<div class="tile t3" data-d="3"><img class="m" style="object-position:50% 18%" src="images/about-3.jpg" alt="Site worker wearing a hard hat" loading="lazy" onerror="this.remove()"><svg><use href="#hat"/></svg></div>
+<button class="play" id="play" aria-label="Play company video">▶</button>
+</div>
+<div class="rv">
+<span class="eyebrow">About us</span>
+<h2>Building foundations for business growth</h2>
+<p class="l">Commercial construction involves the design, development and construction of structures intended for business use. From office buildings and retail spaces to industrial complexes and hospitality.</p>
+<ul class="tick"><li>Site analysis and feasibility studies</li><li>100% satisfaction guarantee</li><li>Architectural design tailored to business needs</li><li>Sustainable and energy-efficient building solutions</li></ul>
+<div class="who"><i></i><div><strong>Richard Smith Collin</strong><br><span style="color:var(--mut)">CEO, Founder of Builda</span></div><em>R. Collin</em></div>
+</div>
+</div>
+</section>
+
+<section class="sec sv" id="services">
+<div class="wrap">
+<div class="head rv"><span class="eyebrow">Our services</span><h2>Your best possible solutions</h2><p>Commercial construction involves the design, development and construction of structures intended for business.</p></div>
+<div class="cards">
+<div class="rv"><div class="card" data-tilt><h3>Architecture design</h3><p>Living, dining, kitchen and play areas designed and attached to the home.</p><div class="art g1"><img class="m" src="images/service-architecture.jpg" alt="Architects reviewing building plans" loading="lazy" onerror="this.remove()"><svg><use href="#plan"/></svg></div></div></div>
+<div class="rv"><div class="card" data-tilt><h3>Pre-construction services</h3><p>Site assessment and feasibility studies, permit acquisition and regulatory compliance.</p><div class="art g2"><img class="m" style="object-position:50% 22%" src="images/service-preconstruction.jpg" alt="Engineer surveying a construction site" loading="lazy" onerror="this.remove()"><svg><use href="#crane"/></svg></div></div></div>
+<div class="rv"><div class="card" data-tilt><h3>Renovation &amp; remodeling</h3><p>Office space expansion and redesign, retail store remodeling and fit-outs.</p><div class="art g3"><img class="m" src="images/service-renovation.jpg" alt="Team renovating an office interior" loading="lazy" onerror="this.remove()"><svg><use href="#hat"/></svg></div></div></div>
+</div>
+</div>
+</section>
+
+<section class="tw" id="why">
+<div class="wrap ts" id="ts">
+<div class="tst"><div class="vf"><video id="wv" muted playsinline preload="auto" disablepictureinpicture poster="videos/why-poster.jpg" data-src="videos/why.mp4" aria-label="A house being built from an empty plot to a finished home"></video><div class="vbar"><i id="vbar"></i></div></div></div>
+<div>
+<div class="head" style="text-align:left;margin:0 0 18px"><span class="eyebrow">Why choose us</span><h2 style="font-size:clamp(28px,3.6vw,40px)">From empty plot to finished home</h2></div>
+<div class="steps" id="steps">
+<div class="step on"><b>01</b><div><h3>Site survey and planning</h3><p>We walk the plot, check the ground and agree your budget and timeline before any work begins.</p></div></div>
+<div class="step"><b>02</b><div><h3>Professional design</h3><p>Our architects turn your brief into detailed drawings and a 3D model you can approve.</p></div></div>
+<div class="step"><b>03</b><div><h3>Strong foundations</h3><p>Excavation, reinforcement and concrete are inspected at every stage so the structure starts solid.</p></div></div>
+<div class="step"><b>04</b><div><h3>Quality construction</h3><p>Columns, walls and roof go up floor by floor, checked against the plan by certified crews.</p></div></div>
+<div class="step"><b>05</b><div><h3>Finished and handed over</h3><p>A completed home, tested and cleaned, handed over on the day we agreed.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec pj" id="projects">
+<div class="wrap">
+<div class="head rv"><span class="eyebrow">Our projects</span><h2>Check our latest projects</h2><p>Commercial construction involves the design, development and construction of structures intended for business.</p></div>
+<div class="pg">
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g4"><img class="m" src="images/project-1.jpg" alt="Completed office tower" loading="lazy" onerror="this.remove()"><svg><use href="#bldg"/></svg></div><div class="i"><h3>Skyline office tower</h3><small>Commercial</small></div></a></div>
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g2"><img class="m" src="images/project-2.jpg" alt="Retail centre exterior" loading="lazy" onerror="this.remove()"><svg><use href="#crane"/></svg></div><div class="i"><h3>Harbour retail centre</h3><small>Retail</small></div></a></div>
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g3"><img class="m" src="images/project-3.jpg" alt="Residential development" loading="lazy" onerror="this.remove()"><svg><use href="#plan"/></svg></div><div class="i"><h3>Garden residences</h3><small>Residential</small></div></a></div>
+<div class="rv"><a class="pc" href="#contact" style="display:block"><div class="art g1"><img class="m" src="images/project-4.jpg" alt="Warehouse fit-out" loading="lazy" onerror="this.remove()"><svg><use href="#hat"/></svg></div><div class="i"><h3>Warehouse fit-out</h3><small>Industrial</small></div></a></div>
+</div>
+</div>
+</section>
+
+<section class="ct" id="contact">
+<div class="wrap cg">
+<div class="rv"><span class="eyebrow">Contact us</span><h2>Tell us what you want to build</h2><p>Share a few details and our team will reply within one business day with next steps.</p></div>
+<form id="f" class="rv">
+<input name="n" placeholder="Your name" required aria-label="Your name">
+<input name="e" type="email" placeholder="Email address" required aria-label="Email address">
+<select name="t" aria-label="Project type"><option>Architecture design</option><option>Pre-construction services</option><option>Renovation &amp; remodeling</option><option>New build</option></select>
+<textarea name="m" placeholder="About your project" aria-label="About your project"></textarea>
+<button class="btn" type="submit" style="justify-self:start">Send request →</button>
+<div class="ok" id="ok" role="status"></div>
+</form>
+</div>
+</section>
+</main>
+<dialog id="vd"><button class="x" id="vx" aria-label="Close video">✕</button><video id="vv" controls playsinline preload="none" poster="videos/poster.jpg" src="videos/about.mp4"></video><p id="vn" hidden>Add your video at videos/about.mp4 to play it here.</p></dialog>
+<footer>© 2026 Builda Constructions. All rights reserved.</footer>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},clamp=function(v,a,b){return Math.max(a,Math.min(b,v))};
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var steps=[].slice.call(document.querySelectorAll('.step')),STEP_AT=[0,.08,.18,.42,.75];
+/* scroll-scrubbed video: eases the playhead toward the scroll position.
+   The wrapper's scroll length is calculated from the video's frame count (30 fps),
+   so the section stays pinned until the last frame has played. */
+var PX_PER_FRAME=7;
+function Scrub(v,wrapId){
+  var o={p:0,cur:0,run:false,sized:false};
+  o.size=function(){
+    if(!v.duration)return;
+    document.getElementById(wrapId).style.height=(innerHeight+Math.round(v.duration*30)*PX_PER_FRAME)+'px';o.sized=true;
+  };
+  o.go=function(){
+    if(o.run||!v.duration)return;o.run=true;
+    (function step(){
+      var t=o.p*(v.duration-.05);o.cur+=(t-o.cur)*.25;if(o.p>=1)o.cur=t;
+      if(Math.abs(t-o.cur)<.012){o.cur=t;o.run=false}
+      if(!v.seeking&&Math.abs(v.currentTime-o.cur)>.008)v.currentTime=o.cur;
+      if(o.run)requestAnimationFrame(step);
+    })();
+  };
+  v.addEventListener('loadedmetadata',function(){o.size();o.go()});
+  addEventListener('resize',function(){o.size()});
+  return o;
+}
+var hv=$('#hv'),wv=$('#wv'),H=Scrub(hv,'hw'),W=Scrub(wv,'why'),vbar=$('#vbar');
+/* the second video loads after the page, so the hero gets the bandwidth first */
+addEventListener('load',function(){setTimeout(function(){wv.src=wv.dataset.src},1500)});
+function unlock(){[hv,wv].forEach(function(x){if(x.src)x.play().then(function(){x.pause()}).catch(function(){})});removeEventListener('touchstart',unlock);removeEventListener('scroll',unlock)}
+addEventListener('touchstart',unlock,{passive:true});addEventListener('scroll',unlock,{passive:true});
+/* scroll engine */
+var hw=$('#hw'),hc=$('#hc'),tw=$('#why'),tiles=[].slice.call(document.querySelectorAll('[data-d]')),rvs=[].slice.call(document.querySelectorAll('.rv'));
+var vh=innerHeight,ticking=false,lastStep=-1;
+function frame(){
+  ticking=false;vh=innerHeight;
+  var y=scrollY;
+  /* hero: scroll scrubs the video */
+  var p=reduce?.15:clamp(y/(hw.offsetHeight-vh),0,1);
+  H.p=clamp(p/.92,0,1);if(hv.duration&&!H.sized)H.size();H.go();
+  hv.style.transform='scale('+(1.02+p*.14)+')';
+  var q=clamp(p/.5,0,1);
+  hc.style.opacity=1-q;hc.style.transform='scale('+(1+q*.3)+') translateY('+(-q*40)+'px)';
+  hc.style.pointerEvents=q>.8?'none':'auto';
+  /* why us: scroll scrubs the build video, steps follow the video */
+  var r=tw.getBoundingClientRect(),tp=reduce?0:clamp(-r.top/(tw.offsetHeight-vh),0,1),v=clamp(tp/.92,0,1);
+  W.p=v;if(wv.duration&&!W.sized)W.size();W.go();
+  vbar.style.width=(v*100)+'%';
+  var si=0;STEP_AT.forEach(function(t,i){if(v>=t)si=i});
+  if(si!==lastStep){steps.forEach(function(s,i){s.classList.toggle('on',i===si)});lastStep=si}
+  /* about collage depth */
+  tiles.forEach(function(t){
+    var b=t.parentNode.getBoundingClientRect(),o=((b.top+b.height/2)-vh/2)/vh,d=+t.dataset.d;
+    t.style.transform='translate3d(0,'+(-o*d*38)+'px,'+(d*18)+'px) rotateY('+(o*d*-7)+'deg) rotateX('+(o*5)+'deg)';
+  });
+  /* scroll-linked 3D tilt-in */
+  rvs.forEach(function(el){
+    var b=el.getBoundingClientRect();
+    var o=reduce?0:clamp((b.top-vh*.64)/(vh*.34),0,1);
+    el.style.opacity=1-o;
+    el.style.transformOrigin='50% 100%';
+    el.style.transform=o?'perspective(900px) rotateX('+(o*38)+'deg) translateY('+(o*56)+'px)':'none';
+  });
+}
+function req(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);frame();
+
+/* pointer tilt for cards */
+document.querySelectorAll('[data-tilt]').forEach(function(c){
+  c.addEventListener('pointermove',function(e){
+    if(reduce)return;var b=c.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;
+    c.style.transform='rotateY('+(x*16)+'deg) rotateX('+(-y*16)+'deg)';
+  });
+  c.addEventListener('pointerleave',function(){c.style.transform=''});
+});
+/* counters */
+var io=new IntersectionObserver(function(es){es.forEach(function(en){
+  if(!en.isIntersecting)return;io.unobserve(en.target);
+  var el=en.target,n=+el.dataset.n,s=el.dataset.s,t0=performance.now();
+  (function tick(t){var k=reduce?1:clamp((t-t0)/1400,0,1);el.textContent=Math.round(n*(1-Math.pow(1-k,3)))+(k===1?s:'');if(k<1)requestAnimationFrame(tick)})(t0);
+})},{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(function(e){io.observe(e)});
+/* video modal */
+var vd=$('#vd'),vv=$('#vv');
+var clips=['videos/about.mp4','videos/about-2.mp4','videos/about-3.mp4'],ci=0;
+$('#play').addEventListener('click',function(){vd.showModal();vv.play().catch(function(){})});
+vv.addEventListener('ended',function(){ci=(ci+1)%clips.length;vv.src=clips[ci];vv.play().catch(function(){})});
+vv.addEventListener('error',function(){$('#vn').hidden=false;vv.hidden=true});
+function cl(){vv.pause();vd.close()}
+$('#vx').addEventListener('click',cl);vd.addEventListener('click',function(e){if(e.target===vd)cl()});
+/* nav + form */
+var bg=$('#burger'),lk=$('#links');
+bg.addEventListener('click',function(){var o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.textContent=o?'✕':'☰'});
+lk.addEventListener('click',function(){lk.classList.remove('open');bg.textContent='☰'});
+$('#f').addEventListener('submit',function(e){e.preventDefault();$('#ok').textContent='Thanks, '+this.n.value+'. We will reply within one business day.';this.reset()});
+})();
+</script>
+</body>
+</html>
